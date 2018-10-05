@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Feat } from '../../components/feat/feat';
 
 /**
  * Generated class for the CharacterPage page.
@@ -14,6 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'character.html',
 })
 export class CharacterPage {
+  id: number;
+  name: string;
+  characterLevel: number;
+  druidLevel: number;
+  feats: Array<Feat>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
