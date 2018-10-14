@@ -12,11 +12,17 @@ import { Component } from '@angular/core';
 })
 export class Monster {
 
-  text: string;
+  id: number;
+  name: string;
+  type: string;
+  full_text: string;
 
-  constructor() {
+  constructor(monster) {
     console.log('Hello Monster Component');
-    this.text = 'Hello World';
+    this.id = monster.id;
+    this.name = monster.name;
+    this.type = monster.type;
+    this.full_text = monster.full_text;
   }
 
 }

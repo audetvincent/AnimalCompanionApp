@@ -13,9 +13,8 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-card *ngFor="let monster of monsters">
+    <ion-card *ngFor="let monster of monsters" (tap)="displayMonster(monster)">
       <ion-card-title>{{ monster.name }}</ion-card-title>
-      <ion-card-content>monster id: {{ monster.id }}</ion-card-content>
     </ion-card>
   </ion-list>
 </ion-content>
