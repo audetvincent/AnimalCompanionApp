@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { DatabaseProvider } from "../../providers/database/database";
-import { Monster } from '../../components/monster/monster';
+import { MonsterFactory } from '../../components/monster/monster';
+import { MonsterModal } from '../../components/monster-modal/monster-modal';
 
 /**
  * Generated class for the BestiaryPage page.
@@ -15,9 +16,12 @@ import { Monster } from '../../components/monster/monster';
   templateUrl: 'bestiary.html',
 })
 export class BestiaryPage {
-  monsters: any;
+  monsters;
+  monsterFactory: MonsterFactory;
 
   constructor(public navCtrl: NavController, private databaseProvider: DatabaseProvider, public modalController: ModalController) {
+    this.monsterFactory = new MonsterFactory();
+
     this.databaseProvider.getDatabaseState().subscribe(ready => {
       if(ready) {
         this.loadMonsterData();
@@ -37,9 +41,15 @@ export class BestiaryPage {
   }
 
   displayMonster(m) {
-    const monster = new Monster(m);
-    const modal = this.modalController.create(monster);
+    console.log('DISPLAY MONSTER');
+    m = this.monsterStringToJson(m);
+    const monster = this.monsterFactory.createMonster(m);
+    const modal = this.modalController.create(MonsterModal, { monster });
     modal.present();
+  }
+
+  monsterStringToJson(monster) {
+    return monster;
   }
 
 }

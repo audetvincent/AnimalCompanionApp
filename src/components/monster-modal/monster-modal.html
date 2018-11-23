@@ -1,0 +1,130 @@
+<!-- Generated template for the MonsterModalComponent component -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ monster.name }}
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <table width='100%' cellpadding='2' cellspacing='2' frame='VOID' rules='ROWS'>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Size/Type</b></td>
+      <td>{{ monster.size }} {{ monster.type }} ({{ monster.descriptor }})<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Hit Dice:</b><br/></td>
+      <td>{{ monster.hit_dice }}<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Initiative:</b><br/></td>
+      <td>{{ monster.initiative }}<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Speed:</b><br/></td>
+      <td>{{ monster.speed }}<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Armor Class:</b><br/></td>
+      <td>{{ monster.armor_class }}<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Base Attack/Grapple:</b><br/></td>
+      <td>{{ monster.base_attack }}/{{ monster.grapple }}<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Attack:</b><br/></td>
+      <td>{{ monster.attack }}<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Full Attack:</b><br/></td>
+      <td>{{ monster.full_attack}}<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Space/Reach:</b><br/></td>
+      <td>{{ monster.space }}/{{ monster.reach }}<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Special Attacks:</b><br/></td>
+      <td>{{ monster.special_attacks }}<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Special Qualities:</b><br/></td>
+      <td>{{ monster.special_qualities }}<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Saves:</b><br/></td>
+      <td>Fort +12, Ref +19, Will +17<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Abilities:</b><br/></td>
+      <td>Str 35, Dex 25, Con -, Int 10, Wis 20, Cha 20<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Skills:</b><br/></td>
+      <td>Climb +53, Jump +65<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Feats:</b><br/></td>
+      <td>Blind-Fight, Cleave, Great Cleave, Improved Bull Rush, Improved Critical (blade), Improved Initiative, Improved Sunder, Power Attack, Weapon Focus (blade)<br/></td>
+    </tr>
+    <tr *ngIf="monster.epic_feats" maxcol='3' curcol='3'>
+      <td><b>Epic Feats:</b><br/></td>
+      <td>Devastating Critical (blade), Epic Toughness, Epic Weapon Focus (blade), Overwhelming Critical (blade)<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Environment:</b><br/></td>
+      <td>Any<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Organization:</b><br/></td>
+      <td>Solitary, binary (pair), or command line (2-5 anaxims and 5-12 iron golems)<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Challenge Rating:</b><br/></td>
+      <td>22<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Treasure:</b><br/></td>
+      <td>Standard<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Alignment:</b><br/></td>
+      <td>Always lawful neutral<br/></td>
+    </tr>
+    <tr maxcol='3' curcol='3'>
+      <td><b>Advancement:</b><br/></td>
+      <td>39-48 HD (Large); 49-55 HD (Huge); 56-70 HD (Gargantuan); 71-140 HD (Colossal)<br/></td>
+    </tr>
+  </table>
+  <!-- <p>An anaxim's natural weapons are treated as epic and lawful-aligned for the purpose of overcoming damage reduction.</p>
+  <div topic='Combat' level='5'>
+    <h5>Combat</h5>
+    <div topic='Sonic Blast' level='8'>
+      <p><b>Sonic Blast (Ex):</b> As a standard action, an anaxim can emit a 60-foot cone of sonic energy that deals 20d6 points of sonic damage to all creatures that fail a Reflex save (DC 29); those that succeed take half damage.</p>
+      <p>The save DC is Constitution-based</p>
+    </div>
+    <div topic='Rend' level='8'>
+      <p><b>Rend (Ex):</b> If the anaxim hits with both spinning blades, it slices particularly well. This attack automatically deals an additional 4d6+18 points of damage.</p>
+    </div>
+    <div topic='Spell-Like Abilities' level='8'>
+      <p><b>Spell-Like Abilities:</b> At will-<i>greater dispel magic</i>,  <i>displacement</i> (DC 18),  <i>greater invisibility</i> (DC 19),  <i>ethereal jaunt</i>. Caster level 22nd. The save DCs are Charisma-based.</p>
+    </div>
+    <div topic='Summon Iron Golem' level='8'>
+      <p><b><i>Summon Iron Golem</i> (Sp):</b> An anaxim can summon an iron golem up to four times per day.</p>
+    </div>
+    <div topic='Abomination Traits' level='8'>
+      <p><b>Abomination Traits:</b> Immune to polymorphing, petrification, and other form-altering attacks; not subject to energy drain, ability drain, ability damage, or death from massive damage; immune to mind-affecting effects; fire resistance 20; cold resistance 20; nondetection; true seeing at will; blindsight 500 ft.; telepathy out to 1,000 ft.</p>
+    </div>
+    <div topic='Construct Traits' level='8'>
+      <p><b>Construct Traits:</b> Immune to mind-affecting effects (charms, compulsions, phantasms, patterns, and morale effects), and to poison, <i>sleep</i>,  paralysis, stunning, disease, death effects, necromantic effects, and any effect that requires a Fortitude save unless it also works on objects. Cannot heal damage (though regeneration and fast healing still apply, if present). Not subject to critical hits, subdual damage, ability damage, ability drain, or energy drain. Not at risk of death from massive damage, but destroyed when reduced to 0 hit points or less; cannot be raised or resurrected. Darkvision 60 ft.</p>
+    </div>
+  </div> -->
+</ion-content>

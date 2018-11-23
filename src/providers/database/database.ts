@@ -81,6 +81,22 @@ export class DatabaseProvider {
     })
   }
 
+  getAllAnimal() {
+    return this.database.executeSql('SELECT * FROM monster WHERE "type"="Animal"', []).then((data) => {
+      let animals = [];
+      if(data.rows.length > 0) {
+        for(let i = 0; i < data.rows.length; i++) {
+          const animal = data.rows.item(i);
+          animals.push(animal);
+        }
+      }
+      console.log('RETURN Animals');
+      return animals;
+    }, err => {
+      console.log('GET ALL ANIMALS', JSON.stringify(err));
+    })
+  }
+
   getDatabaseState() {
     return this.databaseReady.asObservable();
   }

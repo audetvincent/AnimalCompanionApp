@@ -14,12 +14,16 @@ import { HomePage } from '../pages/home/home';
 import { BestiaryPage } from '../pages/bestiary/bestiary';
 import { DatabaseProvider } from '../providers/database/database';
 
+import { MonsterModal } from "../components/monster-modal/monster-modal";
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    BestiaryPage
+    BestiaryPage,
+
+    MonsterModal,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { DatabaseProvider } from '../providers/database/database';
   entryComponents: [
     MyApp,
     HomePage,
-    BestiaryPage
+    BestiaryPage,
+
+    MonsterModal,
   ],
   providers: [
     StatusBar,
